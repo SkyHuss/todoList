@@ -1,21 +1,15 @@
 import { useState } from 'react'
-import { DoubleArrowRounded, FormatListNumberedRounded, CalendarMonthOutlined, StickyNote2, Menu } from '@mui/icons-material';
+import { Menu} from '@mui/icons-material';
 
 import './Sidebar.css'
-import SidebarItem, { SidebarItemType } from './SidebarItem/SidebarItem';
+import SidebarItem from './SidebarItem/SidebarItem';
+import { sidebarItems } from '../../constants/Sidebar';
 
 
 export default function Sidebar() {
 
     const [isCollapsed, setIsCollapsed] = useState(false);
-
-    const sidebarItems: SidebarItemType[] = [
-        {label: 'Upcoming', icon: DoubleArrowRounded, path: '/'},
-        {label: 'Today', icon: FormatListNumberedRounded, path: '/'},
-        {label: 'Calendar', icon: CalendarMonthOutlined, path: '/'},
-        {label: 'Sticky Wall', icon: StickyNote2, path: '/'}
-    ];
-
+    
     const collapseSidebar = () => {
         setIsCollapsed(!isCollapsed)
     }

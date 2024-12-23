@@ -1,4 +1,5 @@
 import { SvgIconComponent } from '@mui/icons-material';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import './SidebarItem.css'
 
@@ -16,11 +17,22 @@ interface Props {
 export default function SidebarItem({item, isCollapsed}: Props) {
 
     const Icon = item.icon;
+    const location = useLocation();
 
-    return <div className="sidebar-item-container" style={{justifyContent: `${isCollapsed ? 'center' : 'start'}`}}>
-        <Icon className='icon'/>
-        {!isCollapsed && 
-            <div className="label">{item.label}</div>
-        }
-    </div>
+    const isActive = (path: string) => {
+        return location.pathname === path;
+    }
+
+    return (
+        <NavLink 
+            to={item.path}
+            className={`sidebar-item-container ${isActive(item.path) && 'active'}`} 
+            style={{justifyContent: `${isCollapsed ? 'center' : 'start'}`}}
+        >
+            <Icon className='icon'/>
+            {!isCollapsed && 
+                <div className="label">{item.label}</div>
+            }
+        </NavLink>
+    )
 }

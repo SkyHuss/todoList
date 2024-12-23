@@ -12,7 +12,8 @@
     transition: all 0.3s;
 }
 
-.sidebar-item-container:hover {
+.sidebar-item-container:hover, 
+.sidebar-item-container.active {
     cursor: pointer;
     background-color: var(--neutral-400);
     color: var(--black);
