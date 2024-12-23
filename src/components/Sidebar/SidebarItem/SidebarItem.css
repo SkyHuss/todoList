@@ -1,0 +1,22 @@
+.sidebar-item-container {
+    margin-top: 8px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    padding: 0 5px;
+    background-color: transparent;
+    font-weight: 400;
+    color: var(--darker-gray);
+    transition: all 0.3s;
+}
+
+.sidebar-item-container:hover {
+    cursor: pointer;
+    background-color: var(--neutral-400);
+    color: var(--black);
+    font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
