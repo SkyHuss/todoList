@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu} from '@mui/icons-material';
+import { Menu, ExpandCircleDownOutlined } from '@mui/icons-material';
 
 import './Sidebar.css'
 import SidebarItem from './SidebarItem/SidebarItem';
@@ -14,21 +14,33 @@ export default function Sidebar() {
         setIsCollapsed(!isCollapsed)
     }
 
-    return <div className={`sidebar-container ${isCollapsed && 'collapsed'}`}>
-        <div className="header">
-            {!isCollapsed && 
-                <div className="title">Menu</div>
-            }
-            <div className="collapse-button" onClick={collapseSidebar}><Menu/></div>
-        </div>
+    return <>
+        {/* default computer screen size */}
+        <div className={`sidebar-container ${isCollapsed && 'collapsed'}`}>
+            <div className="header">
+                {!isCollapsed && 
+                    <div className="title">Menu</div>
+                }
+                <div className="collapse-button" onClick={collapseSidebar}>
+                    { isCollapsed ? <Menu/> : <ExpandCircleDownOutlined style={{rotate: '90deg'}}/> }
+                </div>
+            </div>
 
-        <div className="menu-container">
-            <div className="menu-list">
-                {!isCollapsed && <div className="title">TASKS</div>}
-                {sidebarItems.map(item => (
-                    <SidebarItem key={item.label} item={item} isCollapsed={isCollapsed}/>
-                ))}
+            <div className="menu-container">
+                <div className="menu-list">
+                    {!isCollapsed && <div className="title">TASKS</div>}
+                    {sidebarItems.map(item => (
+                        <SidebarItem key={item.label} item={item} isCollapsed={isCollapsed}/>
+                    ))}
+                </div>
             </div>
         </div>
-    </div>
+
+        {/* mobile screens size */}
+        <div className="mobile-navbar-container">
+            {sidebarItems.map(item => (
+                <SidebarItem key={item.label} item={item} isCollapsed={isCollapsed}/>
+            ))}
+        </div>
+    </>
 }
