@@ -9,7 +9,7 @@ import { sidebarItems } from '../../constants/Sidebar';
 export default function Sidebar() {
 
     const [isCollapsed, setIsCollapsed] = useState(false);
-    
+
     const collapseSidebar = () => {
         setIsCollapsed(!isCollapsed)
     }
@@ -23,9 +23,12 @@ export default function Sidebar() {
         </div>
 
         <div className="menu-container">
-            {sidebarItems.map(item => (
-                <SidebarItem key={item.label} item={item} isCollapsed={isCollapsed}/>
-            ))}
+            <div className="menu-list">
+                {!isCollapsed && <div className="title">TASKS</div>}
+                {sidebarItems.map(item => (
+                    <SidebarItem key={item.label} item={item} isCollapsed={isCollapsed}/>
+                ))}
+            </div>
         </div>
     </div>
 }
