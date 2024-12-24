@@ -8,3 +8,7 @@
     box-sizing: border-box;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+textarea:focus, input:focus{
+    outline: none;
+}
