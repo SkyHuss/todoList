@@ -27,7 +27,7 @@ export default function Sidebar() {
             </div>
 
             <div className="search-bar-container">
-                {isCollapsed ? 
+                {isCollapsed ?
                     <Search className='collapsed-search-icon' onClick={() => {setIsCollapsed(false)}}/> :
                     <Search className='search-icon'/>
                 }

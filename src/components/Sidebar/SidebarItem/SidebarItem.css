@@ -20,3 +20,20 @@
     font-weight: 700;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.sidebar-item-container .item-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 5px;
+}
+
+.sidebar-item-container .item-content .notification {
+    background-color: var(--neutral-200);
+    border-radius: 4px;
+    padding: 0 5px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

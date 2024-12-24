@@ -6,7 +6,8 @@ import './SidebarItem.css'
 export interface SidebarItemType {
     label: string,
     icon: SvgIconComponent,
-    path: string
+    path: string,
+    notification: number,
 }
 
 interface Props {
@@ -31,7 +32,12 @@ export default function SidebarItem({item, isCollapsed}: Props) {
         >
             <Icon className='icon'/>
             {!isCollapsed && 
-                <div className="label">{item.label}</div>
+                <div className="item-content">
+                    <div className="label">{item.label}</div>
+                    {item.notification > 0 &&
+                        <div className="notification">{item.notification}</div>
+                    }
+                </div>
             }
         </NavLink>
     )
