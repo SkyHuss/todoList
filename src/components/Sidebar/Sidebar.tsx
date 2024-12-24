@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, ExpandCircleDownOutlined } from '@mui/icons-material';
+import { Menu, ExpandCircleDownOutlined, Search } from '@mui/icons-material';
 
 import './Sidebar.css'
 import SidebarItem from './SidebarItem/SidebarItem';
@@ -24,6 +24,17 @@ export default function Sidebar() {
                 <div className="collapse-button" onClick={collapseSidebar}>
                     { isCollapsed ? <Menu/> : <ExpandCircleDownOutlined style={{rotate: '90deg'}}/> }
                 </div>
+            </div>
+
+            <div className="search-bar-container">
+                {isCollapsed ? 
+                    <Search className='collapsed-search-icon' onClick={() => {setIsCollapsed(false)}}/> :
+                    <Search className='search-icon'/>
+                }
+
+                {!isCollapsed && 
+                    <input type="text" className='search-input' placeholder='Search'/>
+                }
             </div>
 
             <div className="menu-container">
