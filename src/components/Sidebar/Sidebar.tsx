@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Menu, ExpandCircleDownOutlined, Search } from '@mui/icons-material';
 
 import './Sidebar.css'
@@ -9,9 +9,17 @@ import { sidebarItems } from '../../constants/Sidebar';
 export default function Sidebar() {
 
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const searchInputRef = useRef<HTMLInputElement | null>(null);
 
     const collapseSidebar = () => {
         setIsCollapsed(!isCollapsed)
+    }
+
+    const handleCollapseSearchButton = () => {
+        setIsCollapsed(false);
+        setTimeout(() => {
+            searchInputRef.current?.focus();
+        }, 0);
     }
 
     return <>
@@ -28,12 +36,12 @@ export default function Sidebar() {
 
             <div className="search-bar-container">
                 {isCollapsed ?
-                    <Search className='collapsed-search-icon' onClick={() => {setIsCollapsed(false)}}/> :
+                    <Search className='collapsed-search-icon' onClick={handleCollapseSearchButton}/> :
                     <Search className='search-icon'/>
                 }
 
                 {!isCollapsed && 
-                    <input type="text" className='search-input' placeholder='Search'/>
+                    <input type="text" className='search-input' ref={searchInputRef} placeholder='Search'/>
                 }
             </div>
 
