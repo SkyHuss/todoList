@@ -1,0 +1,27 @@
+.sticky-wall-container {
+    height: 100%;
+}
+
+.sticky-wall-container .header {
+    font-size: 22px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.sticky-wall-container .content {
+    max-height: calc(100% - 38px);
+    overflow: auto;
+    border-top: solid 1px var(--neutral-250);
+    border-left: solid 1px var(--neutral-250);
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1090px){
+    .sticky-wall-container .content {
+        justify-content: center;
+    }
+}

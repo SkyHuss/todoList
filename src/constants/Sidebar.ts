@@ -5,5 +5,5 @@ export const sidebarItems: SidebarItemType[] = [
     { label: 'Upcoming', icon: DoubleArrowRounded, path: '/upcoming', notification: 12 },
     { label: 'Today', icon: FormatListNumberedRounded, path: '/today', notification: 5 },
     { label: 'Calendar', icon: CalendarMonthOutlined, path: '/calendar', notification: 0 },
-    { label: 'Sticky Wall', icon: StickyNote2Outlined, path: '/sticky-wall', notification: 7 }
+    { label: 'Sticky Wall', icon: StickyNote2Outlined, path: '/sticky-wall', notification: 0 }
 ];

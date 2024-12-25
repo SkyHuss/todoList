@@ -1,0 +1,27 @@
+.sticky-note-container {
+    height: 400px;
+    width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    transition: 0.3s all;
+}
+
+.sticky-note-container:hover {
+    height: 410px;
+    width: 380px;
+    box-shadow: rgba(0, 0, 0, 0.24) 3px 5px 10px;
+    padding: 30px 35px;
+
+}
+
+.sticky-note-container .title {
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+
+.sticky-note-container .description {
+    text-align: justify;
+    line-height: 1.5;
+}
+
