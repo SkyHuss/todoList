@@ -11,7 +11,7 @@ import StickyWall from './pages/stickyWall/stickyWall';
 
 function AppLayout() {
   return (
-    <div className='app-container'>
+    <div id='app-container' className='app-container'>
       <Sidebar />
       <div className="content">
         <Outlet />
