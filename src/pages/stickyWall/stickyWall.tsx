@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import './stickyWall.css'
 import mockedData from '../../assets/mocks/stickyWall.json'
 import StickyNote from '../../components/StickyNote/StickyNote';
 import { Add } from '@mui/icons-material';
+import Modal from '../../components/Generic/Modal/Modal';
 
 export interface StickNoteType {
     id: number,
@@ -13,6 +15,8 @@ export interface StickNoteType {
 
 export default function StickyWall() {
 
+    const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+
     const stickyNotes: StickNoteType[] = mockedData as StickNoteType[];
 
     return <div className="sticky-wall-container">
@@ -21,9 +25,16 @@ export default function StickyWall() {
             {stickyNotes.map( note => (
                 <StickyNote key={note.id} note={note}/>
             ))}
-            <div className="create-note-button">
+            <div className="create-note-button" onClick={() => setIsCreateModalOpen(true)}>
                 <Add />
             </div>
         </div>
+
+        {isCreateModalOpen &&
+            <Modal title='Create a sticky note' closeModal={() => setIsCreateModalOpen(false)}>
+                Contenue de la modale
+            </Modal>
+        }
+
     </div>
 }
