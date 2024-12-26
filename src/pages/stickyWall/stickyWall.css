@@ -20,6 +20,32 @@
     flex-wrap: wrap;
 }
 
+.sticky-wall-container .content .create-note-button {
+    height: 400px;
+    width: 350px;
+    border-radius: 8px;
+    background-color: var(--neutral-300);
+    border: solid 2px var(--neutral-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.3s;
+
+}
+
+.sticky-wall-container .content .create-note-button:hover {
+    border: solid 10px var(--neutral-400);
+    background-color: var(--neutral-250);
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.sticky-wall-container .content .create-note-button svg {
+    height: 50px;
+    width: 50px;
+}
+
 @media screen and (max-width: 1090px){
     .sticky-wall-container .content {
         justify-content: center;

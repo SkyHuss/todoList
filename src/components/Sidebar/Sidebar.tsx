@@ -58,7 +58,7 @@ export default function Sidebar() {
         {/* mobile screens size */}
         <div className="mobile-navbar-container">
             {sidebarItems.map(item => (
-                <SidebarItem key={item.label} item={item} isCollapsed={isCollapsed}/>
+                <SidebarItem key={item.label} item={item} isCollapsed={true}/>
             ))}
         </div>
     </>

@@ -1,6 +1,7 @@
 import './stickyWall.css'
 import mockedData from '../../assets/mocks/stickyWall.json'
 import StickyNote from '../../components/StickyNote/StickyNote';
+import { Add } from '@mui/icons-material';
 
 export interface StickNoteType {
     id: number,
@@ -20,6 +21,9 @@ export default function StickyWall() {
             {stickyNotes.map( note => (
                 <StickyNote key={note.id} note={note}/>
             ))}
+            <div className="create-note-button">
+                <Add />
+            </div>
         </div>
     </div>
 }
