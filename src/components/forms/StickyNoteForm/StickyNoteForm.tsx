@@ -1,8 +1,11 @@
 import { Check, Close } from '@mui/icons-material';
+import { useState } from 'react';
+import { HexColorPicker } from 'react-colorful';
 import { v4 as uuidv4 } from 'uuid';
 import { ButtonType } from '../../../constants/Button';
 import { StickNoteType } from "../../../pages/stickyWall/stickyWall"
 import ActionButton from '../../Generic/ActionButton/ActionButton';
+import ColorPicker from '../../Generic/ColorPicker/ColorPicker';
 import StickNote from '../../StickyNote/StickyNote';
 import "./StickyNoteForm.css"
 
@@ -21,8 +24,16 @@ export default function StickyNoteForm({closeModal}:Props) {
         textColor: "#111111"
     }
 
+    const [bgColor, setBgColor] = useState<string>(stickyNote.bgColor);
+    const [color, setColor] = useState<string>(stickyNote.textColor);
+    const [isBackgroundPickerOpen, setIsBackgroundPickerOpen] = useState<boolean>(false);
+    const [isColorPickerOpen, setIsColorPickerOpen] = useState<boolean>(false);
+
+
+
     const validateForm = () => {
         console.log("creation de l element: ", stickyNote)
+        console.log("la bg color: ", bgColor)
     }
 
     return <div className="sticky-note-form-container">
@@ -31,7 +42,8 @@ export default function StickyNoteForm({closeModal}:Props) {
                 <StickNote note={stickyNote} rotate={false}/>
             </div>
             <div className="form-section">
-                Form
+                
+                <ColorPicker colorHex={bgColor} setColorHex={setBgColor}/>
             </div>
         </div>
         <div className="action-buttons">
