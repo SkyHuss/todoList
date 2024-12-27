@@ -33,7 +33,7 @@ export default function StickyWall() {
 
         {isCreateModalOpen &&
             <Modal title='Create a sticky note' closeModal={() => setIsCreateModalOpen(false)}>
-                <StickyNoteForm />
+                <StickyNoteForm closeModal={() => setIsCreateModalOpen(false)}/>
             </Modal>
         }
 
