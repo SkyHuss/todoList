@@ -4,9 +4,10 @@ import mockedData from '../../assets/mocks/stickyWall.json'
 import StickyNote from '../../components/StickyNote/StickyNote';
 import { Add } from '@mui/icons-material';
 import Modal from '../../components/Generic/Modal/Modal';
+import StickyNoteForm from '../../components/forms/StickyNoteForm/StickyNoteForm';
 
 export interface StickNoteType {
-    id: number,
+    id: string,
     title: string,
     description: string,
     bgColor: string,
@@ -32,7 +33,7 @@ export default function StickyWall() {
 
         {isCreateModalOpen &&
             <Modal title='Create a sticky note' closeModal={() => setIsCreateModalOpen(false)}>
-                Contenue de la modale
+                <StickyNoteForm />
             </Modal>
         }
 

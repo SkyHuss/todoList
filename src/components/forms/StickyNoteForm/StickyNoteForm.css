@@ -1,0 +1,28 @@
+.sticky-note-form-container {
+    width: 100%;
+}
+
+.sticky-note-form-container .content {
+    display: flex;
+}
+
+.sticky-note-form-container .content .preview-section {
+    width: 50%;
+    padding: 20px;
+    border-right: solid 1px var(--neutral-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sticky-note-form-container .content .form-section {
+    width: 50%;
+    padding: 5px;
+}
+
+.sticky-note-form-container .action-buttons {
+    padding-top: 20px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
