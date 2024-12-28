@@ -5,18 +5,22 @@
 .picker-wrapper .color-picker-container {
     height: 40px;
     width: 100%;
-    border: solid 1px var(--neutral-300);
+    border: solid 1px var(--neutral-400);
     border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
+.picker-wrapper .color-picker-container:hover {
+    cursor: pointer;
+}
+
 .picker-wrapper .color-picker-container .color-preview {
     height: 30px;
     width: 30px;
     border-radius: 8px;
-    border: solid 1px var(--neutral-300);
+    border: solid 1px var(--neutral-400);
     margin-left: 10px;
 }
 
@@ -26,4 +30,5 @@
     top: 40px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 8px;
+    z-index: 10;
 }

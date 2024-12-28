@@ -17,7 +17,35 @@
 
 .sticky-note-form-container .content .form-section {
     width: 50%;
-    padding: 5px;
+    padding: 5px 10px;
+}
+
+.sticky-note-form-container .content .form-section .form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.sticky-note-form-container .content .form-section .form-input .label{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.sticky-note-form-container .content .form-section .form-input input {
+    height: 40px;
+    border: solid 1px var(--neutral-400);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.sticky-note-form-container .content .form-section .form-input textarea {
+    height: 80px;
+    border: solid 1px var(--neutral-400);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
 }
 
 .sticky-note-form-container .action-buttons {
