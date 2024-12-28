@@ -1,0 +1,90 @@
+.action-button {
+    height: 40px;
+    min-height: 40px;
+    border-radius: 8px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--green-1);
+    color: var(--white);
+    font-size: var(--regular-size);
+    font-weight: var(--regular-weight);
+    transition: all 0.3s;
+    filter: none;
+    white-space: nowrap;
+}
+
+.action-button:hover {
+    cursor: pointer;
+    background-color: var(--green-3);
+}
+
+.action-button.secondary {
+    background-color: var(--white);
+    color: var(--dark-blue);
+    border: solid 1px var(--light-gray);
+}
+
+.action-button.secondary:hover {
+    border: solid 1px var(--secondary-light-1);
+}
+
+.action-button.disabled {
+    background-color: var(--dark-gray);
+    color: var(--white);
+}
+
+.action-button.disabled:hover {
+    cursor: unset;
+}
+
+.action-button.tertiary {
+    min-width: 50px;
+    color: var(--dark-blue);
+    background-color: transparent;
+    border-radius: 0;
+    position: relative;
+}
+
+.action-button.tertiary::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--dark-blue);
+    opacity: 0;
+    transition:
+        opacity 300ms,
+        transform 300ms;
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+.action-button.tertiary:hover::after,
+.action-button.tertiary:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
+.action-button.tertiary:hover::after,
+.action-button.tertiary:focus::after {
+    transform: scale(1);
+}
+
+.action-button.danger {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.action-button.danger:hover {
+    filter: brightness(1.2);
+}
+
+.action-button.not-rounded {
+    border-radius: 0;
+}
