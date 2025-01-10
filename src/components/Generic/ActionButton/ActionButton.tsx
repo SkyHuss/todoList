@@ -5,7 +5,7 @@ import "./ActionButton.css"
 
 
 interface Props {
-    label: string,
+    label?: string,
     icon: SvgIconComponent,
     type?: ButtonType,
     onClick: () => void
@@ -14,6 +14,6 @@ interface Props {
 export default function ActionButton({label, icon: Icon, type = ButtonType.primary, onClick} : Props) {
     return <div className={`action-button ${type}`} onClick={onClick}>
         <Icon />
-        <div className="label">{label}</div>
+        {label && <div className="label">{label}</div>}
     </div>
 }

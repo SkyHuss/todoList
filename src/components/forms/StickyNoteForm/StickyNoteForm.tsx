@@ -1,6 +1,5 @@
-import { Check, Close } from '@mui/icons-material';
+import { Check, Close, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useState } from 'react';
-import { HexColorPicker } from 'react-colorful';
 import { v4 as uuidv4 } from 'uuid';
 import { ButtonType } from '../../../constants/Button';
 import { StickNoteType } from "../../../pages/stickyWall/stickyWall";
@@ -14,6 +13,9 @@ interface Props {
 }
 
 export default function StickyNoteForm({ closeModal }: Props) {
+
+    const [showPreview, setShowPreview] = useState<boolean>(false);
+
     // Initialisation de l'état pour la note
     const [stickyNote, setStickyNote] = useState<StickNoteType>({
         id: uuidv4(),
@@ -76,8 +78,20 @@ export default function StickyNoteForm({ closeModal }: Props) {
                         />
                     </div>
                 </div>
+
+                <div className="mobile-preview-section" style={{left: showPreview ? 0 : 1000}}>
+                    <StickNote note={stickyNote} rotate={false} />
+                </div>
+                
             </div>
             <div className="action-buttons">
+                <div className="display-preview-button">
+                    <ActionButton 
+                        icon={showPreview ? VisibilityOff : Visibility}
+                        type={ButtonType.secondary}
+                        onClick={() => setShowPreview(!showPreview)}
+                    /> 
+                </div>
                 <ActionButton
                     label="Valider"
                     icon={Check}

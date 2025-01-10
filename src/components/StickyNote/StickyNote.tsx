@@ -9,7 +9,6 @@ interface Props {
 
 export default function StickNote({note, rotate = true}: Props) {
 
-    generateRandomNumber
 
     return <div className="sticky-note-container" style={{backgroundColor: note.bgColor, color: note.textColor, transform: rotate ? `rotate(${generateRandomNumber(-8, 8)}deg)` : 'none'}}>
         <div className="title">{note.title}</div>
