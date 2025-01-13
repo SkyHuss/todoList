@@ -1,6 +1,7 @@
 .sidebar-container {
     background-color: var(--neutral-300);
     width: 250px;
+    height: calc(100% - 20px);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 0 10px;
     transition: all 0.3s;
